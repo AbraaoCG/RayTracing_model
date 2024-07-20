@@ -137,17 +137,16 @@ int main(int argc, char* argv[]) {
     
     };
 
-    // // Adicionar N esferas para teste de paralelismo.
-    // N = 50
-    // for (int i = 0; i < N; ++i) {
-    //     float x = (rand() % 2000 - 1000) / 1000.0f;
-    //     float y = (rand() % 2000 - 1000) / 1000.0f;
-    //     float z = -1 - (rand() % 1000) / 1000.0f;
-    //     float radius = 0.05f + (rand() % 100) / 1000.0f;
-    //     Vec3 color(rand() % 100 / 100.0f, rand() % 100 / 100.0f, rand() % 100 / 100.0f);
+    // Adicionar N esferas para teste de paralelismo.
+    for (int i = 0; i < 50; ++i) {
+        float x = (rand() % 2000 - 1000) / 1000.0f;
+        float y = (rand() % 2000 - 1000) / 1000.0f;
+        float z = -1 - (rand() % 1000) / 1000.0f;
+        float radius = 0.05f + (rand() % 100) / 1000.0f;
+        Vec3 color(rand() % 100 / 100.0f, rand() % 100 / 100.0f, rand() % 100 / 100.0f);
 
-    //     objects.push_back(std::make_shared<Sphere>(Sphere{ Vec3(x, y, z), radius, color * 0.2f, color * 0.7f, Vec3(1, 1, 1), 100, 0.5 }));
-    // }
+        objects.push_back(std::make_shared<Sphere>(Sphere{ Vec3(x, y, z), radius, color * 0.2f, color * 0.7f, Vec3(1, 1, 1), 100, 0.5 }));
+    }
 
     // Iniciar temporizador
     auto start_time = std::chrono::high_resolution_clock::now();
