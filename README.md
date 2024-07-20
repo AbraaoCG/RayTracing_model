@@ -19,10 +19,8 @@ $ ./ray_tracer -t 4
 As imagens de teste estão todas em Full HD (1920x1080).
 
 Teste de cenário simples com algumas esferas:
-![Imagem renderizada](https://ibb.co/CJQXC6n)
-<img src="image.png">
+<img src="image_cenarioSImples.png">
 Teste de Paralelismo utilizando diferentes números de núcleos e 200 esferas:
-![Imagem com +200 Esferas](https://ibb.co/LvMJnZL)
 <img src="image_50esph.png">
 
 
