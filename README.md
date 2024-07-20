@@ -1,6 +1,7 @@
 A implementação foi baseada no material e códigos disponíveis em : 
 
 --> https://omaraflak.medium.com/ray-tracing-from-scratch-in-python-41670e6a96f9
+
 -->https://github.com/OmarAflak/RayTracer-Kotlin?source=post_page-----41670e6a96f9--------------------------------
 
 O código final desse material é escrito em Python, e percebe-se ao executá-lo que o desempenho deixa a desejar, demorando alguns segundos para renderizar uma cena simples em resolução 300x200.
@@ -19,10 +20,11 @@ As imagens de teste estão todas em Full HD (1920x1080).
 
 Teste de cenário simples com algumas esferas:
 ![Imagem renderizada](https://ibb.co/CJQXC6n)
-<img src="https://ibb.co/CJQXC6n" alt="Imagem renderizada">
-
+<img src="image.png">
 Teste de Paralelismo utilizando diferentes números de núcleos e 200 esferas:
 ![Imagem com +200 Esferas](https://ibb.co/LvMJnZL)
+<img src="image_50esph.png">
+
 
 Núcleos  Tempo (s)
 1         4.47
