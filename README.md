@@ -1,4 +1,5 @@
 A implementação foi baseada no material e códigos disponíveis em : 
+
 --> https://omaraflak.medium.com/ray-tracing-from-scratch-in-python-41670e6a96f9
 -->https://github.com/OmarAflak/RayTracer-Kotlin?source=post_page-----41670e6a96f9--------------------------------
 
@@ -20,7 +21,7 @@ Teste de cenário simples com algumas esferas:
 ![Imagem renderizada](https://ibb.co/CJQXC6n)
 
 Teste de Paralelismo utilizando diferentes números de núcleos e 200 esferas:
-![Imagem com +200 Esferas](URL_da_Imagem)
+![Imagem com +200 Esferas](https://ibb.co/LvMJnZL)
 
 Núcleos  Tempo (s)
 1         4.47
