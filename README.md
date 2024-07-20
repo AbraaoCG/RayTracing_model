@@ -24,12 +24,14 @@ Teste de Paralelismo utilizando diferentes números de núcleos e 200 esferas:
 <img src="image_50esph.png">
 
 
-Núcleos  Tempo (s)
-1         4.47
-2         3.00
-4         1.71
-8         1.18
-12        1.04
+| Núcleos | Tempo (s) |
+|---------|-----------|
+| 1       | 4.47      |
+| 2       | 3.00      |
+| 4       | 1.71      |
+| 8       | 1.18      |
+| 12      | 1.04      |
+
 
 
 Para efeito de comparação, tentou-se reproduzir esse último cenário com o código original em python( em FullHD ), mas cada linha de 1920 pixels demorava em torno de 3.2 s para ser renderizada, mostrando que o código implementado representa um bom ganho de desempenho a partir das mesmas ideias teóricas para implementação do Ray Tracing.
