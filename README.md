@@ -9,6 +9,7 @@ Além disso, foi acrescentado ao código uso da ferramenta de paralelismo OpenMP
 Para garantir optimalidade, a compilação é feita utilizando a flag -O3, de otimização automática do código.
 
 Exemplo de compilação e execução:
+
 $ g++ -fopenmp -o ray_tracer ray_t.cpp -std=c++17 -g -O3
 
 $ ./ray_tracer -t 4 
