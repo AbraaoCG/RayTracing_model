@@ -10,6 +10,9 @@
 #include <omp.h> // Include OpenMP header
 #include <chrono> // Include chrono for timing
 
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h" // Inclua o arquivo stb_image_write.h
+
 // Definir a estrutura Vec3 e Sphere
 struct Vec3 {
     float x, y, z;
@@ -216,17 +219,31 @@ int main(int argc, char* argv[]) {
     std::cout << "Renderização concluída em " << duration.count() << " segundos.\n";
 
 
-    // Salvar imagem no formato PPM
-    std::ofstream ofs("image.ppm", std::ios::out | std::ios::binary);
-    ofs << "P6\n" << width << " " << height << "\n255\n";
-    for (const auto& row : image) {
-        for (const auto& pixel : row) {
-            ofs << static_cast<unsigned char>(pixel.x * 255)
-                << static_cast<unsigned char>(pixel.y * 255)
-                << static_cast<unsigned char>(pixel.z * 255);
+    // // Salvar imagem no formato PPM
+    // std::ofstream ofs("image.ppm", std::ios::out | std::ios::binary);
+    // ofs << "P6\n" << width << " " << height << "\n255\n";
+    // for (const auto& row : image) {
+    //     for (const auto& pixel : row) {
+    //         ofs << static_cast<unsigned char>(pixel.x * 255)
+    //             << static_cast<unsigned char>(pixel.y * 255)
+    //             << static_cast<unsigned char>(pixel.z * 255);
+    //     }
+    // }
+    // ofs.close();
+
+    // Salvar imagem no formato PNG usando stb_image_write
+    std::vector<unsigned char> png_image(width * height * 3); // RGB format
+
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            Vec3 pixel = image[i][j];
+            png_image[(i * width + j) * 3 + 0] = static_cast<unsigned char>(pixel.x * 255);
+            png_image[(i * width + j) * 3 + 1] = static_cast<unsigned char>(pixel.y * 255);
+            png_image[(i * width + j) * 3 + 2] = static_cast<unsigned char>(pixel.z * 255);
         }
     }
-    ofs.close();
+
+    stbi_write_png("image.png", width, height, 3, png_image.data(), width * 3);
 
     return 0;
 }
